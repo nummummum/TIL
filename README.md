@@ -2,7 +2,7 @@
 
 ## 알고리즘
 
-- <a href="https://github.com/qufvkdlej/TIL/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">그리디 알고리즘</a>
+- <a href="https://github.com/qufvkdlej/TIL/tree/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/그리디 알고리즘.md">그리디 알고리즘</a>
 
 ## 컴퓨터이론
 
