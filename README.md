@@ -8,7 +8,7 @@
 
 ### 네트워크
 
-- <a href="https://github.com/qufvkdlej/TIL/tree/master/%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%B4%EB%A1%A0/네트워크/HTTPS, TCP, UDP, POST, GET.md/">HTTPS, TCP, UDP, POST, GET</a>
+- <a href="https://github.com/qufvkdlej/TIL/blob/master/%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%B4%EB%A1%A0/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTPS%2C%20TCP%2C%20UDP%2C%20POST%2C%20GET.md">HTTPS, TCP, UDP, POST, GET</a>
 
 ## 공부자료
 

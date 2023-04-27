@@ -55,3 +55,73 @@ git 명령어 뒤에 —help 를 주면 그 명령어의 상세 옵션을 알려
 - -drop : 최신 stash를 삭제한다.
 
 - -pop : 최신 stash가 apply되고 drop이 된다.(두 기능을 합친 것)
+
+# 💭 Git의 원리
+
+> Git은 파일을 저장 할 때 파일이름이 달라도 내용이 같으면 같은 오브젝트를 가르킨다.
+
+- Git의 commit ID의 원리
+
+Git은 우리가 저장한 파일의 내용을 SHA1이라는 해쉬 알고리즘을 통과시켜서 파일의 이름을 도출하고 나온 해쉬 값의 앞의 2글자를 떼서 디렉토리를 만들고 나머지 글자의 이름으로 파일을 만들어 정보를 저장한다. 그러기 때문에 같은 내용이면 똑같은 곳에 내용이(blob) 저장이 된다.
+
+> Commit시 동작 원리.
+
+Commit안에는 parent라는 값과 tree라는 값이 있다.
+
+- parent : 이전의 commit의 정보
+- tree : commit이 일어난 시점의 작업 디렉토리에 있는 파일의 이름과 파일이 담은 내용 사이의 정보들(blob들의 정보).
+
+각각의 버전마다 다른 트리를 가리키고 있고 트리마다 파일의 이름과 그 파일의 내용이 담겨있다. 그렇기 때문에 우리는 버전에 적혀있는 tree를 통하여 commit시의 프로젝트 폴더의 상태를 알아낼 수 있다. (snapstop처럼 사진을 찍는 느낌이다.)
+
+![CYO5D.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e60fb02e-ee58-4893-a4b2-a3904993b338/CYO5D.jpg)
+
+> Working Directory(작업 폴더) 동작 원리.
+
+1. add하게 되면 index파일에(staging area) 등록된다.
+2. commit하면 index파일에 등록된 내용들이 repository에 commit object로 저장이 되면서 파일이 저장된다.. 이 때 commit object 안에는 tree(blob 파일들), parent, commit 시간과 정보 등이 포함된다.
+
+# 💭 Branch
+
+> Branch의 뜻
+
+작업을 하다가 필요에 의하여 작업이 분기되는 현상을 Branch를 만든다고 한다. 그래서 분기가 된 문서들은 새로운 Branch가 되고 원래 있었던 문서들은 원래의 Branch가 되어 여러 개의 Branch가 된다.
+
+- 특별한 커스텀 기능을 추가하는데 원래 소스코드를 바꾸지 않아야 할 때
+- 개발을 하다가 서버에 반영을 하기 위해 메인이 되는 작업과 테스트를 위한 작업을 분기 할 때
+
+여러 경우에 Branch를 사용한다. 기본 Branch는 master이다.
+
+예를 들어, master 브랜치의 a.txt파일의 내용이 aa이다. exam 브랜치를 만들고 exam 브랜치로 이동하여 a.txt파일의 내용을 aaa로 바꾸고 b.txt 파일을 만들면 exam 브랜치는 aaa내용의 a.txt파일과 b.txt 파일이 있지만 master 브랜치로 이동하면 aa의 내용을 담고있는 a.txt파일만 있다.
+
+Git은 Head라는 파일을 가지고 있고 Head파일은 refs/heads/master같이 참조 파일이 있고 최근에 commit의 id값을 가지고 있어서 git은 log를 하면 Head 파일을 보고 ref로 된 master파일을 보고 master에 적혀있는 commit id값을 통해 최신 commit을 알아낼 수 있다. 그 이전 commit은 commit에 있는 parent를 통하여 탐색해 나갈 수 있다. 이를 통하여 Git에서 Branch는 단지 refs 디렉토리 안에 있는 파일을 의미한다. Branch를 checkout 하면 HEAD의 ref:refs/heads/master가 ref:refs/heads/exp로 바뀐다.
+
+> merge의 두 가지 작동
+
+![화면 캡처 2023-04-23 173246.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b63d956-f7ce-4529-a667-b7ac12f2d10e/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173246.png)
+
+(1. hotfix branch에서 작업 후 merge hotfix)
+
+![화면 캡처 2023-04-23 173320.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec4b9fb3-d7f0-4af4-9d03-5c6976a107ff/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173320.png)
+
+(2. master branch에서 hotfix를 합병 후 상태 - fast forward)
+
+![화면 캡처 2023-04-23 173340.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01f1a53d-f91a-40d3-a784-28b79d05b28a/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173340.png)
+
+![화면 캡처 2023-04-23 173407.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d6a0a8c7-5e3e-4419-8e9d-1019db2252b2/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173407.png)
+
+(4. master branch에서 iss53를 합병 후 상태)
+
+(3. 합병 된 이후 master branch에서 iss53 branch를 merge)
+
+전제 : master branch에서 hotfix와 iss53 branch를 만든 뒤 commit을 하여 수정을 한 상태.
+
+1. hotfix가 끝난 후 master branch로 checkout하여 hotfix를 merge한다.
+2. master branch는 hotfix가 독립한 후에 아무런 commit을 하지 않았다. 이 경우 병합 할 때 master branch가 가르키는 commit을 hotfix가 가르키는 commit으로 빨리감기를 하는데 이것을 fast-forward 라고 한다. master와 hotfix는 같은 commit을 가르키기 때문에 별도의 commit을 생성하지 않는다.
+3. hotfix branch를 지우고 iss53 branch로 이동하여 iss53을 편집한다. 작업 후 master branch로 돌아가 iss53 branch를 merge 한다. iss53이 master로부터 독립한 이후에 master에는 변화가 생겨서 별도의 commit을 가르키게 되었다. 이 경우 fast-forward를 할 수 있따.
+4. iss53은 master와 공통의 조상을 찾아서 commitA(C4)와 commitB(C5)를 합치고 새로운 commit을 만든다. master와 hotfix의 단계가 없었으면 fast-forword가 되었을 것이다.
+
+> Stash - 작업이 끝나지 않은 상태로 branch 이동
+
+상황 : 작업을 하다가 다 끝나지 않은 상태로 다른 branch로 checkout해서 일을 해야하는 경우가 있다. 이 경우 기존의 작업을 commit하기는 애매하다. 하지만 commit을 하지 않고 checkout하여 다른 작업을 하면 다른 branch에서 수정하고 있을 때 중간에 멈춘 파일의 영향을 받는다. 이런 경우 stash를 이용하여 Working Directory의 변경사항을 감추고 HEAD 버전으로 이동하여 branch관리를 깔끔하게 할 수 있다.
+
+- 주의 : stash는 추적이 가능한 파일에 작동이 되기 때문에 버전관리가 한 번은 되어있어야 한다.
