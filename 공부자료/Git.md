@@ -73,7 +73,7 @@ Commit안에는 parent라는 값과 tree라는 값이 있다.
 
 각각의 버전마다 다른 트리를 가리키고 있고 트리마다 파일의 이름과 그 파일의 내용이 담겨있다. 그렇기 때문에 우리는 버전에 적혀있는 tree를 통하여 commit시의 프로젝트 폴더의 상태를 알아낼 수 있다. (snapstop처럼 사진을 찍는 느낌이다.)
 
-![CYO5D.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e60fb02e-ee58-4893-a4b2-a3904993b338/CYO5D.jpg)
+![CYO5D](https://user-images.githubusercontent.com/76617155/234971637-20987b1e-ca60-4a18-bad4-df45350bd2fe.jpg)
 
 > Working Directory(작업 폴더) 동작 원리.
 
@@ -97,18 +97,17 @@ Git은 Head라는 파일을 가지고 있고 Head파일은 refs/heads/master같�
 
 > merge의 두 가지 작동
 
-![화면 캡처 2023-04-23 173246.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b63d956-f7ce-4529-a667-b7ac12f2d10e/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173246.png)
+![화면 캡처 2023-04-23 173246](https://user-images.githubusercontent.com/76617155/234971655-9f02e972-4e87-43ab-9313-80db21e33847.png)
 
 (1. hotfix branch에서 작업 후 merge hotfix)
 
-![화면 캡처 2023-04-23 173320.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec4b9fb3-d7f0-4af4-9d03-5c6976a107ff/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173320.png)
+![화면 캡처 2023-04-23 173320](https://user-images.githubusercontent.com/76617155/234971665-194c6b84-0a2c-4f81-a236-7f53a5b39bec.png)
 
 (2. master branch에서 hotfix를 합병 후 상태 - fast forward)
 
-![화면 캡처 2023-04-23 173340.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01f1a53d-f91a-40d3-a784-28b79d05b28a/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173340.png)
+![화면 캡처 2023-04-23 173340](https://user-images.githubusercontent.com/76617155/234971673-42362672-1c2b-41fc-b792-bf802001d494.png)
 
-![화면 캡처 2023-04-23 173407.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d6a0a8c7-5e3e-4419-8e9d-1019db2252b2/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2023-04-23_173407.png)
-
+![화면 캡처 2023-04-23 173407](https://user-images.githubusercontent.com/76617155/234971685-87310d4c-597d-4900-b789-1f83d8c40761.png)
 (4. master branch에서 iss53를 합병 후 상태)
 
 (3. 합병 된 이후 master branch에서 iss53 branch를 merge)
