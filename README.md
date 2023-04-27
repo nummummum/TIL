@@ -10,8 +10,8 @@
 
 ## 공부자료
 
-- <a href="">Git</a>
-- <a href="">데이터 구조</a>
+- <a href="https://github.com/qufvkdlej/TIL/tree/master/%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C/git.md">Git</a>
+- <a href="https://github.com/qufvkdlej/TIL/tree/master/%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C/데이터 구조.md">데이터 구조</a>
 
 ## 백준
 
