@@ -116,7 +116,8 @@ Git은 Head라는 파일을 가지고 있고 Head파일은 refs/heads/master같�
 
 1. hotfix가 끝난 후 master branch로 checkout하여 hotfix를 merge한다.
 2. master branch는 hotfix가 독립한 후에 아무런 commit을 하지 않았다. 이 경우 병합 할 때 master branch가 가르키는 commit을 hotfix가 가르키는 commit으로 빨리감기를 하는데 이것을 fast-forward 라고 한다. master와 hotfix는 같은 commit을 가르키기 때문에 별도의 commit을 생성하지 않는다.
-3. hotfix branch를 지우고 iss53 branch로 이동하여 iss53을 편집한다. 작업 후 master branch로 돌아가 iss53 branch를 merge 한다. iss53이 master로부터 독립한 이후에 master에는 변화가 생겨서 별도의 commit을 가르키게 되었다. 이 경우 fast-forward를 할 수 있따.
+3. hotfix branch를 지우고 iss53 branch로 이동하여 iss53을 편집한다. 작업 후 master branch로 돌아가 iss53 branch를 merge 한다. iss53이 master로부터 독립한 이후에 master에는 변화가 생겨서 별도의 commit을 가르키게 되었다. 이 경우 fast-forward를 할 수 있다.
+
 4. iss53은 master와 공통의 조상을 찾아서 commitA(C4)와 commitB(C5)를 합치고 새로운 commit을 만든다. master와 hotfix의 단계가 없었으면 fast-forword가 되었을 것이다.
 
 > Stash - 작업이 끝나지 않은 상태로 branch 이동
