@@ -19,3 +19,7 @@
 ## 백준
 
 - <a href="https://github.com/qufvkdlej/TIL/tree/master/%EB%B0%B1%EC%A4%80/그리디 알고리즘.md">그리디 알고리즘</a>
+
+## 프로젝트 - 3D인테리어
+
+- <a href="https://github.com/qufvkdlej/TIL/blob/master/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/3D%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4/%EC%84%A4%EA%B3%84%EB%8F%84.md">디자인 설계</a>
