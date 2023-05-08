@@ -16,10 +16,13 @@
 - <a href="https://github.com/qufvkdlej/TIL/tree/master/%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C/Array와 List.md">Array와 List</a>
 - <a href="https://github.com/qufvkdlej/TIL/tree/master/%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C/Stack과 Queue.md">Stack과 Queue</a>
 - <a href="https://github.com/qufvkdlej/TIL/blob/master/%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C/Webpack.md">Webpack</a>
+- <a href="https://github.com/qufvkdlej/TIL/blob/master/%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C/코딩테스트%20팁.md">코딩테스트 팁</a>
 
 ## 백준
 
 - <a href="https://github.com/qufvkdlej/TIL/tree/master/%EB%B0%B1%EC%A4%80/그리디 알고리즘.md">그리디 알고리즘</a>
+
+- <a href="https://github.com/qufvkdlej/TIL/tree/master/백준/오답노트/스택%2C큐/스택%2C큐.md">스택 큐</a>
 
 ## 프로젝트 - 3D인테리어
 
